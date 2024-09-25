@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import "./globals.css";
+import Link from "next/link";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
+
+// className={`${geistSans.variable} ${geistMono.variable} antialiased}`
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,11 +28,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <header></header>
+      <body>
+        <header className="flex flex-row justify-around py-3">
+          <Link href={"/"}>홈</Link>
+          <Link href={"/champions"}>챔피언 목록</Link>
+          <Link href={"/items"}>아이템 목록</Link>
+          <Link href={"/rotation"}>챔피언 로테이션</Link>
+        </header>
         {children}
+        <footer>
+          <p className="text-center">
+            [Your Product Name] is not endorsed by Riot Games and does not
+            reflect the views or opinions of Riot Games or anyone officially
+            involved in producing or managing Riot Games properties. Riot Games
+            and all associated properties are trademarks or registered
+            trademarks of Riot Games, Inc.
+          </p>
+        </footer>
       </body>
     </html>
   );
