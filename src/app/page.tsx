@@ -1,4 +1,8 @@
 // import Image from "next/image";
+// SSG 방식
+// 글로벌레이아웃설정, 공통 레이아웃 정의
+// 앱의 소개, 사용방법
+// 메타데이터 설정
 
 export default function Home() {
   return (
