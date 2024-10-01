@@ -5,7 +5,7 @@
 import React from "react";
 import { ItemInfo } from "@/types/Item";
 import { fetchItemList } from "@/utils/serverApi";
-import ListCard from "@/styles/ListCard";
+import ListCard from "@/components/ListCard";
 
 export type Item = Pick<ItemInfo, "name" | "plaintext" | "image">;
 

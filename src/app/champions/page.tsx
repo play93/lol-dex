@@ -5,7 +5,7 @@
 
 import { Champion } from "@/types/Champion";
 import { fetchChampionList } from "@/utils/serverApi";
-import ListCard from "@/styles/ListCard";
+import ListCard from "@/components/ListCard";
 
 export const revalidate = 86400; // 진짜 하루마다 갱신되나? => 확인
 export type ChampionInfo = Pick<Champion, "id" | "name" | "title" | "image">;
