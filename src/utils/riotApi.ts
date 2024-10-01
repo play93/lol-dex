@@ -1,6 +1,12 @@
 // getChampionRotation 함수 => 클라이언트 컴포넌트에서 사용 (/api/rotation 엔드포인트를 호출하여 로테이션 데이터를 가져옴)
 
-// - `app/rotation/page.tsx` 파일을 **클라이언트 컴포넌트**로 작성합니다.
-// - `useEffect`와 `useState`를 활용하여 데이터를 가져오고 상태를 관리합니다.
-// - 로딩 상태, 에러 상태를 처리하여 사용자에게 피드백을 제공합니다.
-// - 가져온 데이터를 기반으로 챔피언 목록을 렌더링합니다.
+export const getChampionRotation = async () => {
+  const data = await fetch(
+    "https://br1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=RGAPI-bb3eef5b-82de-4da0-b01f-e95e35fb4541",
+    {
+      cache: "no-store",
+    }
+  );
+  const rotation = await data.json();
+  return rotation;
+};
