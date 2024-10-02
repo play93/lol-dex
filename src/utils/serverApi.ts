@@ -5,7 +5,7 @@ const commonUrl = "https://ddragon.leagueoflegends.com/cdn/14.19.1/data/ko_KR";
 export const fetchChampionList = async () => {
   const data = await fetch(`${commonUrl}/champion.json`);
   const champions = await data.json();
-  return champions;
+  return champions.data;
 };
 
 // fetchChampionDetail 함수 (동적 렌더링 방식) => 챔피언 상세정보 (이름, 타이틀, 이미지, 설명 등 + 스킬정보, 스탯정보 등)

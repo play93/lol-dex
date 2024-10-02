@@ -7,12 +7,14 @@ import { Champion } from "@/types/Champion";
 import { fetchChampionList } from "@/utils/serverApi";
 import ListCard from "@/components/ListCard";
 
-export const revalidate = 86400; // 진짜 하루마다 갱신되나? => 확인
+export const revalidate = 86400; // 진짜 하루마다 갱신되나? => 확인 ㅇ
 export type ChampionInfo = Pick<Champion, "id" | "name" | "title" | "image">;
 
 export const ChampionsPage = async () => {
   const response = await fetchChampionList();
-  const champions: ChampionInfo[] = Object.values(response.data); // 객체 속성의 값을 배열로 리턴해서 타입을 Champion[]으로 지정
+  const champions: Champion[] = Object.keys(response).map(
+    (key) => response[key]
+  );
 
   return (
     <>
