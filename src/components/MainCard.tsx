@@ -10,10 +10,16 @@ type ListItemProps = {
 
 const MainCard = ({ title, imgURL, href }: ListItemProps) => {
   return (
-    <li>
-      <Link href={href}>
-        <Image src={imgURL} alt={title} width={80} height={80} />
-        <h1>{title}</h1>
+    <li className="flex flex-col justify-center align-middle text-center border p-3 rounded-lg	 cursor-pointer transition hover:shadow-[0_10px_20px_0px_rgba(255,255,255,0.2)]">
+      <Link href={href} className="flex flex-col gap-3">
+        <Image
+          src={imgURL}
+          alt={title}
+          width={200}
+          height={400}
+          className="rounded-md"
+        />
+        <h1 className="text-[#ccc] text-lg">{title}</h1>
       </Link>
     </li>
   );

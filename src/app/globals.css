@@ -25,3 +25,19 @@ body {
     text-wrap: balance;
   }
 }
+
+.header-style {
+  @apply fixed top-0 w-full;
+}
+
+.nav-style {
+  @apply flex flex-row justify-around py-3 bg-gray-800 text-white;
+}
+
+.main-style {
+  @apply py-48;
+}
+
+.footer-style {
+  @apply text-center py-4 bg-gray-900 text-gray-400 fixed bottom-0;
+}
