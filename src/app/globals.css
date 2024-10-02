@@ -35,9 +35,29 @@ body {
 }
 
 .main-style {
-  @apply py-48;
+  @apply py-36 m-auto px-4 max-w-[1600px];
 }
 
 .footer-style {
-  @apply text-center py-4 bg-gray-900 text-gray-400 fixed bottom-0;
+  @apply text-center p-4 bg-gray-900 text-gray-400 fixed bottom-0;
+}
+
+.title-style {
+  @apply font-bold text-2xl mb-12 text-[#f55];
+}
+
+.list-style {
+  @apply grid grid-cols-2 gap-4 md:grid-cols-5;
+}
+
+.list-item-style {
+  @apply border p-5 rounded-lg;
+}
+
+.list-item-title-style {
+  @apply font-bold text-xl text-[#f55];
+}
+
+.list-description-title-style {
+  @apply text-gray-500;
 }

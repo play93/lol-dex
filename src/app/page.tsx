@@ -1,9 +1,3 @@
-// import Image from "next/image";
-// SSG 방식 ㅇ
-// 글로벌레이아웃설정, 공통 레이아웃 정의 ㅇ
-// 앱의 소개, 사용방법 ㅇ
-// 메타데이터 설정 ㅇ
-
 import MainCard from "@/components/MainCard";
 import { Metadata } from "next";
 import championListImg from "@/public/championList.webp";
@@ -19,9 +13,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col items-center gap-3 py-7">
-      <h1 className="font-bold text-2xl text-[#ccc]">
-        리그오브 레전드 정보 앱
-      </h1>
+      <h1 className="title-style">리그오브 레전드 정보 앱</h1>
       <p className="text-[#bbb]">
         Riot Games API를 활용하여 챔피언과 아이템 정보를 제공합니다.
       </p>

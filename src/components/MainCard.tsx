@@ -19,7 +19,7 @@ const MainCard = ({ title, imgURL, href }: ListItemProps) => {
           height={400}
           className="rounded-md"
         />
-        <h1 className="text-[#ccc] text-lg">{title}</h1>
+        <h1 className="list-item-title-style">{title}</h1>
       </Link>
     </li>
   );

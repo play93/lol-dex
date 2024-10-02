@@ -1,13 +1,8 @@
-// ISR방식으로 구현 ㅇ
-// 재검증 시간(revalidate): 하루(86400초) ㅇ
-// TypeScript의 유틸리티 타입을 사용 (ㅇ) => pick 사용
-// 별도의 Card 컴포넌트를 만들어 재사용성 ㅇ
-
 import { Champion } from "@/types/Champion";
 import { fetchChampionList } from "@/utils/serverApi";
 import ListCard from "@/components/ListCard";
 
-export const revalidate = 86400; // 진짜 하루마다 갱신되나? => 확인 ㅇ
+export const revalidate = 86400; // 하루마다 갱신
 export type ChampionInfo = Pick<Champion, "id" | "name" | "title" | "image">;
 
 export const ChampionsPage = async () => {
@@ -18,8 +13,8 @@ export const ChampionsPage = async () => {
 
   return (
     <>
-      <h1>챔피언 페이지 입니다.</h1>
-      <ul>
+      <h1 className="title-style">챔피언 목록</h1>
+      <ul className="list-style">
         {champions.map((champion) => (
           <ListCard
             key={champion.id}
