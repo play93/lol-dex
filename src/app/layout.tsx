@@ -31,10 +31,30 @@ export default function RootLayout({
       <body className="bg-black ">
         <header className="header-style">
           <nav className="nav-style">
-            <Link href={"/"}>홈</Link>
-            <Link href={"/champions"}>챔피언 목록</Link>
-            <Link href={"/items"}>아이템 목록</Link>
-            <Link href={"/rotation"}>챔피언 로테이션</Link>
+            <Link
+              href={"/"}
+              className="w-full text-center hover:underline underline-offset-8"
+            >
+              홈
+            </Link>
+            <Link
+              href={"/champions"}
+              className="w-full text-center hover:underline underline-offset-8"
+            >
+              챔피언 목록
+            </Link>
+            <Link
+              href={"/items"}
+              className="w-full text-center hover:underline underline-offset-8"
+            >
+              아이템 목록
+            </Link>
+            <Link
+              href={"/rotation"}
+              className="w-full text-center hover:underline underline-offset-8"
+            >
+              챔피언 로테이션
+            </Link>
           </nav>
         </header>
         <main className="main-style">{children}</main>

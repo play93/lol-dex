@@ -17,7 +17,7 @@ export default function Home() {
       <p className="text-[#bbb]">
         Riot Games API를 활용하여 챔피언과 아이템 정보를 제공합니다.
       </p>
-      <ul className="flex flex-row gap-5 py-10">
+      <ul className="flex flex-col gap-5 py-10 md:flex-row">
         <MainCard
           title={"챔피언 목록 보기"}
           imgURL={championListImg}

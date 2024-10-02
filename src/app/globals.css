@@ -47,11 +47,11 @@ body {
 }
 
 .list-style {
-  @apply grid grid-cols-2 gap-4 md:grid-cols-5;
+  @apply grid grid-cols-2 gap-5 md:grid-cols-5;
 }
 
 .list-item-style {
-  @apply border p-5 rounded-lg;
+  @apply border p-5 rounded-lg transition duration-500 hover:shadow-[0_10px_20px_0px_rgba(255,255,255,0.4)];
 }
 
 .list-item-title-style {
