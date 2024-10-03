@@ -3,7 +3,7 @@ import { fetchChampionList } from "@/utils/serverApi";
 import ListCard from "@/components/ListCard";
 
 export const revalidate = 86400; // 하루마다 갱신
-export type ChampionInfo = Pick<Champion, "id" | "name" | "title" | "image">;
+//export type ChampionInfo = Pick<Champion, "id" | "name" | "title" | "image">;
 
 const ChampionsPage = async () => {
   const response = await fetchChampionList();
