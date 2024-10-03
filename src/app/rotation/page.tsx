@@ -17,16 +17,12 @@ const RotationPage = () => {
         // 로테이션 정보를 가져옴
         const data = await fetch("/api/rotation");
         const rotation = await data.json();
-        console.log("rotation:", rotation);
         const rotationData = rotation.result.freeChampionIds;
-        //const rotationData = await getChampionRotation();
         setRotation(rotationData);
-        console.log(rotationData);
 
         // 챔피언 정보를 가져옴
         const championData = await fetchChampionList();
         setChampionList(championData);
-        console.log(championData);
 
         //다가져오면 로딩을 false로
         setIsLoading(false);
