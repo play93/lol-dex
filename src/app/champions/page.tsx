@@ -5,7 +5,7 @@ import ListCard from "@/components/ListCard";
 export const revalidate = 86400; // 하루마다 갱신
 export type ChampionInfo = Pick<Champion, "id" | "name" | "title" | "image">;
 
-export const ChampionsPage = async () => {
+const ChampionsPage = async () => {
   const response = await fetchChampionList();
   const champions: Champion[] = Object.keys(response).map(
     (key) => response[key]
