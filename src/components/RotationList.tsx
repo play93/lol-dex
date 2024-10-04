@@ -7,7 +7,7 @@ import { Champion } from "@/types/Champion";
 
 // 가져온 데이터(로테이션 챔피언 리스트) 타입 정의
 interface RotationResponse {
-  rotationChampion: Champion[];
+  result: Champion[];
 }
 
 const RotationList = () => {
@@ -24,7 +24,7 @@ const RotationList = () => {
         // 로테이션 정보를 가져옴
         const response = await fetch("/api/rotation");
         const data: RotationResponse = await response.json();
-        setRotationChampionList(data.rotationChampion);
+        setRotationChampionList(data.result);
       } catch (error) {
         setIsError(true);
         setIsLoading(false);
@@ -39,7 +39,6 @@ const RotationList = () => {
 
   if (isLoading) return <Loading />;
   if (isError) return <>Error...</>;
-
   return (
     <ul className="list-style">
       {rotationChampionList.map((champion) => (
