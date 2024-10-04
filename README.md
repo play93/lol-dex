@@ -15,6 +15,8 @@ https://lol-dex-alpha.vercel.app/
 - 렌더링 방식 : Server Side Rendering (SSR)
 - 각 상세페이지로 이동할 수 있음
 - 메타데이터 설정을 통해 SEO향상
+- 다크모드 기능으로 UX향상
+- 반응형
 
 ### :two: 챔피언 리스트 페이지
 
