@@ -31,7 +31,7 @@ body {
 }
 
 .nav-style {
-  @apply flex flex-row justify-around py-3 bg-gray-800 text-white;
+  @apply flex flex-row justify-between items-center py-3 bg-gray-800 text-white;
 }
 
 .main-style {
@@ -51,7 +51,7 @@ body {
 }
 
 .list-item-style {
-  @apply border p-5 rounded-lg transition duration-500 hover:shadow-[0_10px_20px_0px_rgba(255,255,255,0.4)];
+  @apply border p-5 rounded-lg transition duration-500 dark:hover:shadow-[0_10px_20px_0px_rgba(255,255,255,0.4)] hover:shadow-[0_10px_20px_0px_rgba(0,0,0,0.4)];
 }
 
 .list-item-title-style {
@@ -59,5 +59,5 @@ body {
 }
 
 .list-description-title-style {
-  @apply text-gray-500;
+  @apply dark:text-gray-500;
 }

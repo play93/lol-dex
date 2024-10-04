@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
+import ThemeSwitchButton from "@/components/ThemeSwitchButton";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -28,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-black ">
+      <body className="dark:bg-black ">
         <header className="header-style">
           <nav className="nav-style">
             <Link
@@ -55,10 +56,11 @@ export default function RootLayout({
             >
               챔피언 로테이션
             </Link>
+            <ThemeSwitchButton />
           </nav>
         </header>
         <main className="main-style">{children}</main>
-        <footer className="footer-style">
+        <footer className="footer-style ">
           <p className="text-center">
             [Your Product Name] is not endorsed by Riot Games and does not
             reflect the views or opinions of Riot Games or anyone officially

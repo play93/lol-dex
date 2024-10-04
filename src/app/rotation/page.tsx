@@ -1,9 +1,10 @@
 "use client";
 
 import ListCard from "@/components/ListCard";
+import Loading from "@/components/Loading";
 import { Champion } from "@/types/Champion";
 import { fetchChampionList } from "@/utils/serverApi";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 const RotationPage = () => {
   const [rotation, setRotation] = useState<number[]>([]);
@@ -39,24 +40,25 @@ const RotationPage = () => {
   const rotationChampion = Object.values(championList).filter((champion) =>
     rotation.includes(Number(champion.key))
   );
-  console.log(rotationChampion);
   if (isLoading) return <>Loading...</>;
   if (isError) return <>Error...</>;
 
   return (
     <div>
       <h1 className="title-style">챔피언 로테이션</h1>
-      <ul className="list-style">
-        {rotationChampion.map((champion) => (
-          <ListCard
-            key={champion.id}
-            href={`/champions/${champion.id}`}
-            imgURL={`https://ddragon.leagueoflegends.com/cdn/14.19.1/img/champion/${champion.image.full}`}
-            name={champion.name}
-            description={champion.title}
-          />
-        ))}
-      </ul>
+      <Suspense fallback={<Loading />}>
+        <ul className="list-style">
+          {rotationChampion.map((champion) => (
+            <ListCard
+              key={champion.id}
+              href={`/champions/${champion.id}`}
+              imgURL={`https://ddragon.leagueoflegends.com/cdn/14.19.1/img/champion/${champion.image.full}`}
+              name={champion.name}
+              description={champion.title}
+            />
+          ))}
+        </ul>
+      </Suspense>
     </div>
   );
 };

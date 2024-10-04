@@ -7,7 +7,7 @@
 }
 
 .detail-description-style {
-  @apply text-gray-300;
+  @apply dark:text-gray-300;
 }
 
 .detail-sm-title-style {
@@ -19,5 +19,5 @@
 }
 
 .detail-list-style {
-  @apply text-gray-300 list-disc;
+  @apply dark:text-gray-300 list-disc;
 }

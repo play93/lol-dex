@@ -5,6 +5,11 @@ const commonUrl = "https://ddragon.leagueoflegends.com/cdn/14.19.1/data/ko_KR";
 export const fetchChampionList = async () => {
   const data = await fetch(`${commonUrl}/champion.json`);
   const champions = await data.json();
+
+  if (!data.ok) {
+    return { message: "에러가 발생했습니다." };
+  }
+
   return champions.data;
 };
 
@@ -12,6 +17,11 @@ export const fetchChampionList = async () => {
 export const fetchChampionDetail = async (id: string) => {
   const data = await fetch(`${commonUrl}/champion/${id}.json`);
   const champion = await data.json();
+
+  if (!data.ok) {
+    return { message: "에러가 발생했습니다." };
+  }
+
   return champion;
 };
 
@@ -19,6 +29,10 @@ export const fetchChampionDetail = async (id: string) => {
 export const fetchItemList = async () => {
   const data = await fetch(`${commonUrl}/item.json`);
   const item = await data.json();
-  //console.log("fetchItemList : ", item);
+
+  if (!data.ok) {
+    return { message: "에러가 발생했습니다." };
+  }
+
   return item;
 };
