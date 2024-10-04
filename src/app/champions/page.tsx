@@ -6,16 +6,13 @@ export const revalidate = 86400; // 하루마다 갱신
 //export type ChampionInfo = Pick<Champion, "id" | "name" | "title" | "image">;
 
 const ChampionsPage = async () => {
-  const response = await fetchChampionList();
-  const champions: Champion[] = Object.keys(response).map(
-    (key) => response[key]
-  );
+  const champions: Champion[] | null = await fetchChampionList();
 
   return (
     <>
       <h1 className="title-style">챔피언 목록</h1>
       <ul className="list-style">
-        {champions.map((champion) => (
+        {champions?.map((champion) => (
           <ListCard
             key={champion.id}
             href={`/champions/${champion.id}`}
