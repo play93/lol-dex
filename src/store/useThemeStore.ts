@@ -26,3 +26,7 @@ export const ToggleDarkModeOnHTML = () => {
     document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 };
+
+// 다크모드일 때 새로고침하면 다크모드가 풀렸다가 새로고침이 완료되면 다크모드가 적용되는 문제.
+// 브라우저 렌더링방식, 돔이랑 css언제 결합되는지 공부
+// shadcn-next theme 사용하면 해결되긴함
