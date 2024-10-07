@@ -7,7 +7,13 @@ export type Item = Pick<ItemInfo, "name" | "plaintext" | "image">;
 
 const ItemsPage = async () => {
   const response = await fetchItemList();
-  const items: Item[] = Object.values(response.data);
+
+  // response가 에러 메시지 객체인지 확인
+  if ("message" in response) {
+    return <div>{response.message}</div>;
+  }
+
+  const items = Object.values(response.data);
 
   return (
     <div>
@@ -15,7 +21,7 @@ const ItemsPage = async () => {
       <ul className="list-style">
         {items.map((item, index) => (
           <ListCard
-            key={index}
+            key={index + item.name}
             imgURL={`https://ddragon.leagueoflegends.com/cdn/14.19.1/img/item/${item.image.full}`}
             name={item.name}
             description={item.plaintext}

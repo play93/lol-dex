@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { ChampionDetail } from "@/types/Champion";
 import { fetchChampionDetail } from "@/utils/serverApi";
 import { Metadata, ResolvingMetadata } from "next";
 import "@/styles/championDetail.css";
+import { ChampionDetail } from "@/types/Champion";
 
 type Props = {
   params: {
@@ -18,7 +18,16 @@ export const generateMetadata = async (
 ): Promise<Metadata> => {
   // read route params
   const response = await fetchChampionDetail(params.id);
-  const champion = response.data[params.id];
+
+  // response가 에러 메시지 객체인지 확인
+  if ("message" in response) {
+    return {
+      title: "Error",
+      description: response.message, // 에러 메시지 반환
+    };
+  }
+
+  const champion = response as ChampionDetail;
 
   const championImages = (await parent).openGraph?.images || [];
 
@@ -34,7 +43,16 @@ export const generateMetadata = async (
 // 챔피언 상세 정보 페이지 컴포넌트
 const ChampionDetailPage = async ({ params }: Props) => {
   const response = await fetchChampionDetail(params.id);
-  const champion: ChampionDetail = response.data[params.id];
+
+  // response가 에러 메시지 객체인지 확인
+  if ("message" in response) {
+    return {
+      title: "Error",
+      description: response.message, // 에러 메시지 반환
+    };
+  }
+
+  const champion = response as ChampionDetail;
 
   return (
     <div className="w-4/5 m-auto">

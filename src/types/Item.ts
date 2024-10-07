@@ -1,5 +1,9 @@
 // **아이템 타입 정의**
 
+export interface ItemFullInfo {
+  data: Record<string, ItemInfo>;
+}
+
 export type ItemInfo = {
   name: string;
   plaintext: string;
